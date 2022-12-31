@@ -1,0 +1,37 @@
+.acercaDe--row{
+    padding: 20px;
+    margin: 0px;
+}
+
+@media (min-width: 576px){
+    .acercaDe--row div img{
+        left: 20px;
+        position: absolute;
+        width: 15%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px grey;
+        top: 550px;
+    }
+}
+
+
+@media (max-width: 575px){
+    .acercaDe--row div img{
+        width: 30%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px grey;
+        top: 600px;
+    }
+}
+
+
+div{
+    background-color: #a1b5cb;
+    text-align: center  ;
+}
+
+
+.nombre{
+    font-weight: bold;
+    margin-top: 30%;
+}   
