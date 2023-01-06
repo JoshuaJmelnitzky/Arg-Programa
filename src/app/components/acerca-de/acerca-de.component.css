@@ -3,6 +3,11 @@
     margin: 0px;
 }
 
+.acercaDe--row div button{
+    position: relative;
+    bottom: 225px;
+}
+
 @media (min-width: 576px){
     .acercaDe--row div img{
         left: 20px;
@@ -31,7 +36,20 @@ div{
 }
 
 
-.nombre{
+.acercaDe--nombre{
     font-weight: bold;
     margin-top: 30%;
 }   
+
+
+.acercaDe--persona{
+    position: relative;
+    bottom: 200px;
+    left: 15px;
+    background-color: transparent;
+}
+
+.acercaDe--descipcion p{
+    text-align: justify;
+    margin-top: 20px;
+}

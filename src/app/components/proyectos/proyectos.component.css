@@ -1,20 +1,52 @@
 .row{
     padding: 20px;
-    background-color: #a1b5cb;
+    background-color: #a1b1cb;
+    margin: 0px;
 }
 
 
-.contenedor{
-    width: auto;
+h2, h3 {
+    display: inline;
 }
 
 
-.proyecto--titulo, .proyecto--imagen{
-    display: inline-block;
-    text-align: justify;
+
+.card--img img{
+    width: 200px;
+}
+
+.card--img a{
+    text-decoration: none;
+    text-align: center;
 }
 
 
-.proyecto--imagen img{
-    box-shadow: 10px 10px 30px #000000;
+.card{
+    height: 169px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px #ddd;
+}
+
+
+.card--info{
+    height: 100%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card--info .title{
+    margin-bottom: 20px;
+}
+
+
+.card--info .card--info--btn button{
+    margin: 0 15px;
 }

@@ -1,28 +1,39 @@
 <div class="row">
     <h1>Experiencia laboral</h1>
-    <div class="offset-lg-1 col-lg-11">
-        <ul>
-            <li>
-                <h2>Trabajo 1</h2>
-                - <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi veritatis, asperiores id architecto fugiat suscipit. Porro quo quasi accusamus quae est, similique cumque, sunt animi consectetur natus, magnam voluptates.</p>
-        </ul>
 
-        <ul>
-            <li>
-                <h2>Trabajo 2</h2>
-                - <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi veritatis, asperiores id architecto fugiat suscipit. Porro quo quasi accusamus quae est, similique cumque, sunt animi consectetur natus, magnam voluptates.</p>
-        </ul>
-
-        <ul>
-            <li>
-                <h2>Trabajo 3</h2>
-                - <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi veritatis, asperiores id architecto fugiat suscipit. Porro quo quasi accusamus quae est, similique cumque, sunt animi consectetur natus, magnam voluptates.</p>
-        </ul>
+    <div class="col-lg-2">
+        <button class="btn btn-dark" type="button" routerLink="/nuevaexp" *ngIf="isLogged">
+            Nueva Experiencia
+        </button>
     </div>
 </div>
+
+<div class="row">
+    <div class="offset-lg-1 card col-lg-7" *ngFor="let Experiencia of experiencia">
+        <div clas class="card--img">
+            <img class="img-1" src={{Experiencia.imgE}}>
+        </div>
+
+        <div class="card--info">
+            <div class="title">
+                <h3>{{Experiencia.nombreE}}</h3>
+            </div>
+
+            <div class="text">
+                <p>{{Experiencia.descripcionE}}</p>
+            </div>
+
+            <div class="card--info--btn" *ngIf="isLogged">
+                <button class="btn btn-success" routerLink="/editexp/{{Experiencia.id}}"><i class="bi bi-pencil-fill"></i> Editar</button>
+                <button class="btn btn-danger" (click)="delete(Experiencia.id)"><i class="bi bi-trash-fill"></i> Borrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ 
+
+
+    
+

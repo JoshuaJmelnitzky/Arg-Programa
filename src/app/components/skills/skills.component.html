@@ -1,33 +1,20 @@
 <div class="row">
     <h1>Hard & Soft skills</h1>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [imageSrc]="'../assets/html_logo.png'"
-            [showImage]="true"
-            [imageHeight]="75"
-            [imageWidth]="75"
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="500">
-        </circle-progress>
+    <div class="col-lg-2">
+        <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva habilidad</button>
     </div>
 
-    <div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
         <circle-progress
             [showUnits]="false"
             [showSubtitle]="false"
-            [imageSrc]="'../assets/html_logo.png'"
+            [imageSrc]="(skill.img)"
+            [title]="(skill.nombre)"
             [showImage]="true"
+            [showTitle]="false"
             [imageHeight]="75"
             [imageWidth]="75"
-            [percent]="85"
+            [percent]="(skill.porcentaje)"
             [radius]="100"
             [outerStrokeWidth]="16"
             [innerStrokeWidth]="8"
@@ -36,81 +23,10 @@
             [animation]="true"
             [animationDuration]="500">
         </circle-progress>
-    </div>
 
-    <div class="col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [imageSrc]="'../assets/html_logo.png'"
-            [showImage]="true"
-            [imageHeight]="75"
-            [imageWidth]="75"
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="500">
-        </circle-progress>
-    </div>
-
-    <div class="col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [imageSrc]="'../assets/html_logo.png'"
-            [showImage]="true"
-            [imageHeight]="75"
-            [imageWidth]="75"
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="500">
-        </circle-progress>
-    </div>
-
-    <div class="col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [imageSrc]="'../assets/html_logo.png'"
-            [showImage]="true"
-            [imageHeight]="75"
-            [imageWidth]="75"
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="500">
-        </circle-progress>
-    </div>
-
-    <div class="col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [imageSrc]="'../assets/html_logo.png'"
-            [showImage]="true"
-            [imageHeight]="75"
-            [imageWidth]="75"
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="500">
-        </circle-progress>
+        <div class="card--info--btn" *ngIf="isLogged">
+            <button class="btn btn-success" routerLink="/editskill/{{skill.id}}"><i class="bi bi-pencil-fill"></i> Editar</button>
+            <button class="btn btn-danger" (click)="delete(skill.id)"><i class="bi bi-trash-fill"></i> Borrar</button>
+        </div>
     </div>
 </div>

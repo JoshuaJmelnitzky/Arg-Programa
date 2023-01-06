@@ -1,13 +1,46 @@
 .row{
     padding: 20px;
-}
-
-
-div{
     background-color: #a1b1cb;
+    margin: 0px;
 }
 
 
 h2, h3 {
     display: inline;
+}
+
+
+.card--img img{
+    width: 150px;
+}
+
+
+.card{
+    height: 169px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px #ddd;
+}
+
+
+.card--info{
+    height: 100%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card--info .title{
+    margin-bottom: 20px;
+}
+
+
+.card--info .card--info--btn button{
+    margin: 0 15px;
 }
