@@ -41,4 +41,8 @@ export class UpdateProyectoComponent implements OnInit{
     const name = "proyecto_" + id;
     this.imageService.uploadImage($event, name);  
   }
+
+  home(){
+    this.router.navigate(['/']) 
+  }
 }

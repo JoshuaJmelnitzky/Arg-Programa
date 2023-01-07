@@ -1,13 +1,13 @@
 <div class="row" *ngIf="persona">
     <div class="col-lg-2 acercaDe--persona">
-        <button class="btn btn-primary" type="button" routerLink="/editacercade/1" *ngIf="isLogged">
-            Editar persona
+        <button class="btn btn-light" type="button" routerLink="/editacercade/1" *ngIf="isLogged">
+            <i class="bi bi-pencil-fill"> Editar</i>
         </button>
     </div>
 </div>
 
 <div class="row acercaDe--row">
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-5">
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 pt-3">
         <img class="img-fluid" src={{persona.img}} alt="">
         <p class="acercaDe--nombre">{{persona.nombre}} {{persona.apellido}}</p>
         <p>Full Stack Developer Jr</p>

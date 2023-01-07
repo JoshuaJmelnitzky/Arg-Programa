@@ -8,6 +8,11 @@ img{
 }
 
 
+.redes img{
+    margin: 0.2em;
+} 
+
+
 .container{
     display: flex;
     justify-content: space-between;
@@ -21,6 +26,8 @@ img{
 
 
 .btn{
+    margin-left: 20px;
+    margin-right: 5px;
     border-width: medium;
 }
 
@@ -33,13 +40,8 @@ img{
     
     .redes{
         display: flex;
-        flex-direction: column;
         align-items: center;
+        margin-bottom: 20px;
     }
-    
-    
-    .redes img{
-        margin: 0.2em;
-    } 
 }
 

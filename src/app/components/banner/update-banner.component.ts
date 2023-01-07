@@ -41,4 +41,8 @@ export class UpdateBannerComponent implements OnInit{
     const name = "banner_" + id;
     this.imageService.uploadImage($event, name);  
   }
+
+  home(){
+    this.router.navigate(['/']) 
+  }
 }

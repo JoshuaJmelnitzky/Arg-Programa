@@ -1,4 +1,4 @@
-.acercaDe--row{
+.row{
     padding: 20px;
     margin: 0px;
 }
@@ -6,6 +6,11 @@
 .acercaDe--row div button{
     position: relative;
     bottom: 225px;
+}
+
+
+.acercaDe--row div img{
+    height: 280px;
 }
 
 @media (min-width: 576px){
@@ -30,8 +35,8 @@
 }
 
 
-div{
-    background-color: #a1b5cb;
+.row{
+    background-color: #a1b1cb;
     text-align: center  ;
 }
 
@@ -44,8 +49,8 @@ div{
 
 .acercaDe--persona{
     position: relative;
-    bottom: 200px;
-    left: 15px;
+    bottom: 220px;
+    right: 10px;
     background-color: transparent;
 }
 

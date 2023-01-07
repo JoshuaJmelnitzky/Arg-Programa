@@ -41,4 +41,8 @@ export class EditSkillComponent implements OnInit{
     const name = "skill_" + id;
     this.imageService.uploadImage($event, name);  
   }
+
+  home(){
+    this.router.navigate(['/']) 
+  }
 }

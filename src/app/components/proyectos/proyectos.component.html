@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="proyectos">
     <h1>Proyectos</h1>
 
     <div class="col-lg-2">
@@ -11,10 +11,8 @@
 <div class="row">
     <div class="offset-lg-1 card col-lg-7" *ngFor="let Proyect of project">
         <div clas class="card--img">
-            <img class="img-1" src={{Proyect.img}}>
-            <a href={{Proyect.link}}>
-                <p class="mt-1">Link al repositorio</p>
-            </a>
+            <img class="img-1 img-fluid" src={{Proyect.img}}>
+            <p (click)="onNavigate(Proyect.link)" class="mt-1">Link al repositorio</p>
         </div>
 
         <div class="card--info">

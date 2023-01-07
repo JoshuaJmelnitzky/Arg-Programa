@@ -1,33 +1,21 @@
-<div class="container" *ngIf="project">
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre del proyecto</label>
-                    <input class="form-control" type="text"  id="nombre"  [(ngModel)]="project.nombre" name="nombre" required>
-                </div>
+<div class="row" *ngIf="project">
+    <form class="form" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <h2>Actualizar Proyecto</h2>
+        <p type="Nombre:"><input placeholder="Nombre del proyecto" id="nombre"  [(ngModel)]="project.nombre" name="nombre" required></p>
+        <p type="Descripción:"><input placeholder="Descripción del proyecto"  id="descripcion"  [(ngModel)]="project.descripcion" name="descripcion" required></p>
+        <p type="Link:"><input type="url" placeholder="URL al repositorio" id="link"  [(ngModel)]="project.link" name="link" required></p>
+        <p type="Imagen:">
+            <input placeholder="Logo de la institución" type="file"  id="img"  [(ngModel)]="project.img" name="img" required (change)="uploadImage($event)" accept=".jpg, .jpeg, .png, .webp">
+        </p>
 
-                <div class="form-group">
-                    <label for="descripcion">Descripción del proyecto</label>
-                    <input class="form-control" type="text"  id="descripcion"  [(ngModel)]="project.descripcion" name="descripcion" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="link">Link del repositorio</label>
-                    <input class="form-control" type="text"  id="link"  [(ngModel)]="project.link" name="link" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="img">Imagen</label>
-                    <input class="form-control" type="file"  id="img"  [(ngModel)]="project.img" name="img" required (change)="uploadImage($event)" accept=".jpg, .jpeg, .png, .webp">
-                </div>
-
-                <div class="imagen">
-                    <img [src]="imageService.url" width="200px">
-                </div>
-
-                <button [disabled]="!imageService.url" class="btn btn-primary">Actualizar proyecto</button>
-            </form>
+        <div class="imagen">
+            <img [src]="imageService.url">
         </div>
-    </div>
+
+        <button [disabled]="!imageService.url" class="btn btn-primary">Guardar</button>
+
+        <button (click)="home()" class="btn btn-primary homeButton">Volver</button>
+      
+    </form>
 </div>
+

@@ -39,4 +39,8 @@ export class ProyectosComponent implements OnInit{
       });
     }
   }
+
+  onNavigate(url: string){ 
+    window.open(`//${url}`, "_blank"); 
+  }
 }

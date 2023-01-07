@@ -41,4 +41,8 @@ export class EditExperienciaComponent implements OnInit{
     const name = "experiencia_" + id;
     this.imageService.uploadImage($event, name);  
   }
+
+  home(){
+    this.router.navigate(['/']) 
+  }
 }

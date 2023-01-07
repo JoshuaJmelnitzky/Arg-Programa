@@ -36,4 +36,8 @@ export class NewExperienciaComponent implements OnInit{
     const name = "experiencia_" + this.nombreE;
     this.imageService.uploadImage($event, name);  
   }
+
+  home(){
+    this.router.navigate(['/']) 
+  }
 }

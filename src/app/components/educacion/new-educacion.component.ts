@@ -36,4 +36,8 @@ export class NewEducacionComponent implements OnInit{
     const name = "educacion_" + this.nombreE;
     this.imageService.uploadImage($event, name);  
   }
+
+  home(){
+    this.router.navigate(['/']) 
+  }
 }

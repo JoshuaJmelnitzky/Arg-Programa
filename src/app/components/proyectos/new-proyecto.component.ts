@@ -38,4 +38,8 @@ export class NewProyectoComponent implements OnInit{
     const name = "proyecto_" + this.nombre;
     this.imageService.uploadImage($event, name);  
   }
+
+  home(){
+    this.router.navigate(['/']) 
+  }
 }

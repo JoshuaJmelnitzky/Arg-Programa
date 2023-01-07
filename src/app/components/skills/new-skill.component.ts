@@ -36,4 +36,8 @@ export class NewSkillComponent implements OnInit{
     const name = "skills_" + this.nombre;
     this.imageService.uploadImage($event, name);  
   }
+
+  home(){
+    this.router.navigate(['/']) 
+  }
 }

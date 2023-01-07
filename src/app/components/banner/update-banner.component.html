@@ -1,18 +1,19 @@
-<div class="container" *ngIf="banner">
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="img">Imagen del banner</label>
-                    <input class="form-control" type="file"  id="img"  [(ngModel)]="banner.img" name="img" required (change)="uploadImage($event)" accept=".jpg, .jpeg, .png, .webp">
-                </div>
+<div class="row" *ngIf="banner">
+    <form class="form" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <h2>Actualizar Banner</h2>
 
-                <div class="imagen">
-                    <img [src]="imageService.url" width="200px">
-                </div>
+        <p type="Imagen:">
+            <input placeholder="Imagen del banner" type="file"  id="imgE"  [(ngModel)]="banner.img" name="imgE" required (change)="uploadImage($event)" accept=".jpg, .jpeg, .png, .webp">
+        </p>
 
-                <button [disabled]="!imageService.url" class="btn btn-primary mt-3">Actualizar persona</button>
-            </form>
+        <div class="imagen">
+            <img [src]="imageService.url">
         </div>
-    </div>
+
+        <button [disabled]="!imageService.url" class="btn btn-primary">Guardar</button>
+
+        <button (click)="home()" class="btn btn-primary homeButton">Volver</button>
+      
+    </form>
 </div>
+
