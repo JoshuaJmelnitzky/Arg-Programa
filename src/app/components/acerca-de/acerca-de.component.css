@@ -1,6 +1,8 @@
 .row{
     padding: 20px;
     margin: 0px;
+    background-color: #a1b1cb;
+    text-align: center  ;
 }
 
 .acercaDe--row div button{
@@ -27,23 +29,28 @@
 
 @media (max-width: 575px){
     .acercaDe--row div img{
-        width: 30%;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100vw - 55%);
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
-        top: 600px;
+        top: 615px;
+        left: 0;
+        right: 0;
+        text-align: center;
     }
-}
 
 
-.row{
-    background-color: #a1b1cb;
-    text-align: center  ;
+    .acercaDe--nombre{
+        margin-top: 50px !important;
+    }
 }
 
 
 .acercaDe--nombre{
     font-weight: bold;
-    margin-top: 30%;
+    margin-top: 7vw;
 }   
 
 
