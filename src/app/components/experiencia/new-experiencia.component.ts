@@ -33,8 +33,12 @@ export class NewExperienciaComponent implements OnInit{
   }
 
   uploadImage($event: any){
-    const name = "experiencia_" + this.nombreE;
-    this.imageService.uploadImage($event, name);  
+    this.experienciaService.lista().subscribe(data => {
+      const ids = data.map(res => res.id);
+      const last = ids.length > 0? Math.max(...ids) + 1: 1;
+      const name = "experiencia_" + last;
+      this.imageService.uploadImage($event, name);  
+    });
   }
 
   home(){

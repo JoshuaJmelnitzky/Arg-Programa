@@ -4,6 +4,9 @@
     padding: 20px;
 }
 
+button{
+    text-align: left;
+}
 
 .row div{
     text-align: center;

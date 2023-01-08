@@ -17,6 +17,7 @@ export class EditExperienciaComponent implements OnInit{
   ngOnInit(): void {
     this.imageService.clearUrl();
     const id = this.activatedRoute.snapshot.params['id']; 
+    this.imageService.getImages(`experiencia_${id}`);
     this.experienciaService.detail(id).subscribe(data => {
       this.expLab = data;
     }, err => {

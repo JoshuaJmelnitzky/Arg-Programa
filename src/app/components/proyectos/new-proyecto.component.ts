@@ -35,8 +35,12 @@ export class NewProyectoComponent implements OnInit{
   }
 
   uploadImage($event: any){
-    const name = "proyecto_" + this.nombre;
-    this.imageService.uploadImage($event, name);  
+    this.proyectoService.lista().subscribe(data => {
+      const ids = data.map(res => res.id);
+      const last = ids.length > 0? Math.max(...ids) + 1: 1;
+      const name = "proyecto_" + last;
+      this.imageService.uploadImage($event, name);  
+    });
   }
 
   home(){

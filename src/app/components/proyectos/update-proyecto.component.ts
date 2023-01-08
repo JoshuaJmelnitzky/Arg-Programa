@@ -17,6 +17,7 @@ export class UpdateProyectoComponent implements OnInit{
   ngOnInit(): void {
     this.imageService.clearUrl();
     const id = this.activatedRoute.snapshot.params['id']; 
+    this.imageService.getImages(`proyecto_${id}`);
     this.proyectoService.detail(id).subscribe(data => {
       this.project = data;
     }, err => {

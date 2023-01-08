@@ -33,8 +33,12 @@ export class NewSkillComponent implements OnInit{
   };
 
   uploadImage($event: any){
-    const name = "skills_" + this.nombre;
-    this.imageService.uploadImage($event, name);  
+    this.skillS.lista().subscribe(data => {
+      const ids = data.map(res => res.id);
+      const last = ids.length > 0? Math.max(...ids) + 1: 1;
+      const name = "skill_" + last;
+      this.imageService.uploadImage($event, name);  
+    });
   }
 
   home(){

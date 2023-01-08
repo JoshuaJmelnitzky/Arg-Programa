@@ -17,6 +17,7 @@ export class UpdateEducacionComponent implements OnInit{
   ngOnInit(): void {
     this.imageService.clearUrl();
     const id = this.activatedRoute.snapshot.params['id'];
+    this.imageService.getImages(`educacion_${id}`);
     this.educacionService.detail(id).subscribe(data => {
       this.educacion = data;
     }, err => {
