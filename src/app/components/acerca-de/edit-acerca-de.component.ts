@@ -17,6 +17,7 @@ export class EditAcercaDeComponent implements OnInit{
   ngOnInit(): void {
     this.imageService.clearUrl();
     const id = this.activatedRoute.snapshot.params['id'];
+    this.imageService.getImages(`perfil_${id}`);
     this.personaService.detail(id).subscribe(data => {
       this.persona = data;
     }, err => {

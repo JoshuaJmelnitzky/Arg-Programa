@@ -17,6 +17,7 @@ export class UpdateBannerComponent implements OnInit{
   ngOnInit(): void {
     this.imageService.clearUrl();
     const id = this.activatedRoute.snapshot.params['id'];
+    this.imageService.getImages(`banner_${id}`);
     this.bannerService.detail(id).subscribe(data => {
       this.banner = data;
     }, err => {
