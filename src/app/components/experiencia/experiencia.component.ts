@@ -32,7 +32,7 @@ export class ExperienciaComponent implements OnInit {
 
   delete(id?: number){
     if(id != undefined){
-      this.experienciaService.detail(id).subscribe(data => this.imageService.delete(data.nombreE));
+      this.experienciaService.detail(id).subscribe(data => this.imageService.delete(`experiencia_${data.id}`));
       this.experienciaService.delete(id).subscribe(data => {
           this.cargarExperiencia();
       }, err => {

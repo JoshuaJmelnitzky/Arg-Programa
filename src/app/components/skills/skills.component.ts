@@ -33,7 +33,7 @@ export class SkillsComponent implements OnInit{
 
   delete(id: number): void{
     if(id != undefined){
-      this.skillS.detail(id).subscribe(data => this.imageService.delete(data.nombre));
+      this.skillS.detail(id).subscribe(data => this.imageService.delete(`skill_${data.id}`));
       this.skillS.delete(id).subscribe(data => {
         this.cargarSkills();
       }, err => {

@@ -31,7 +31,7 @@ export class ProyectosComponent implements OnInit{
 
   delete(id?: number){
     if(id != undefined){
-      this.proyectoService.detail(id).subscribe(data => this.imageService.delete(data.nombre));
+      this.proyectoService.detail(id).subscribe(data => this.imageService.delete(`proyecto_${data.id}`));
       this.proyectoService.delete(id).subscribe(data => {
           this.cargarProyecto();
       }, err => {

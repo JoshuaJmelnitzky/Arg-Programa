@@ -31,4 +31,8 @@ export class SkillsService {
   public delete(id:number): Observable<any>{
     return this.httpClient.delete(this.URL + `delete/${id}`); 
   };
+
+  public getMax(): Observable<number>{
+    return this.httpClient.get<number>(this.URL + `maxid`);
+  };
 }

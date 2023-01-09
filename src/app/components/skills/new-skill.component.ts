@@ -33,13 +33,11 @@ export class NewSkillComponent implements OnInit{
   };
 
   uploadImage($event: any){
-    this.skillS.lista().subscribe(data => {
-      const ids = data.map(res => res.id);
-      const last = ids.length > 0? Math.max(...ids) + 1: 1;
-      const name = "skill_" + last;
+    this.skillS.getMax().subscribe(id => {
+      const name = "skill_" + id;
       this.imageService.uploadImage($event, name);  
     });
-  }
+  };
 
   home(){
     this.router.navigate(['/']) 

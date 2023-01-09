@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { deleteObject, getDownloadURL, list, listAll, ref, Storage, uploadBytes } from '@angular/fire/storage';
+import { deleteObject, getDownloadURL, ref, Storage, uploadBytes } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +31,7 @@ export class ImageService {
   }
 
   public delete(name: string){
-    const imagesRef = ref(this.storage, `imagen/experiencia_${name}`); 
+    const imagesRef = ref(this.storage, `imagen/${name}`); 
     deleteObject(imagesRef);
   }
   

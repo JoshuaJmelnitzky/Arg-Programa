@@ -32,7 +32,7 @@ export class EducacionComponent implements OnInit {
 
   delete(id?: number){
     if(id != undefined){
-      this.educacionService.detail(id).subscribe(data => this.imageService.delete(data.nombreE));
+      this.educacionService.detail(id).subscribe(data => this.imageService.delete(`educacion_${data.id}`));
       this.educacionService.delete(id).subscribe(data => {
         this.cargarEducacion();
       }, err => {

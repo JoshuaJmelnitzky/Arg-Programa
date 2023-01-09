@@ -18,6 +18,10 @@ export class NewExperienciaComponent implements OnInit{
 
   ngOnInit(): void {
     this.imageService.clearUrl();
+
+    this.experienciaService.getMax().subscribe(id => {
+      console.log('El id actual es', id)
+    })
   }
 
   onCreate(): void{
@@ -33,13 +37,11 @@ export class NewExperienciaComponent implements OnInit{
   }
 
   uploadImage($event: any){
-    this.experienciaService.lista().subscribe(data => {
-      const ids = data.map(res => res.id);
-      const last = ids.length > 0? Math.max(...ids) + 1: 1;
-      const name = "experiencia_" + last;
-      this.imageService.uploadImage($event, name);  
-    });
-  }
+      this.experienciaService.getMax().subscribe(id => {
+        const name = "experiencia_" + id;
+        this.imageService.uploadImage($event, name);  
+      });
+  };
 
   home(){
     this.router.navigate(['/']) 

@@ -31,4 +31,8 @@ export class ExperienciaService {
   public delete(id: number): Observable<any>{
     return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
   }
+
+  public getMax(): Observable<number>{
+    return this.httpClient.get<number>(this.expURL + `maxid`);
+  };
 }

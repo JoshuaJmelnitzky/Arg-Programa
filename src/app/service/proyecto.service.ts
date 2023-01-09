@@ -8,27 +8,31 @@ import { Proyecto } from '../model/proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
-  expURL = environment.URL + 'proyecto/' 
+  URL = environment.URL + 'proyecto/' 
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Proyecto[]>{
-    return this.httpClient.get<Proyecto[]>(this.expURL + 'lista'); 
+    return this.httpClient.get<Proyecto[]>(this.URL + 'lista'); 
   } 
 
   public detail(id: number): Observable<Proyecto>{
-    return this.httpClient.get<Proyecto>(this.expURL + `detail/${id}`);
+    return this.httpClient.get<Proyecto>(this.URL + `detail/${id}`);
   } 
 
   public save(proyecto: Proyecto): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'create', proyecto);
+    return this.httpClient.post<any>(this.URL + 'create', proyecto);
   }
 
   public update(id: number, proyecto: Proyecto): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `update/${id}`, proyecto);
+    return this.httpClient.put<any>(this.URL + `update/${id}`, proyecto);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.URL + `delete/${id}`);
   }
+
+  public getMax(): Observable<number>{
+    return this.httpClient.get<number>(this.URL + `maxid`);
+  };
 }

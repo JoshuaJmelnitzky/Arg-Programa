@@ -33,13 +33,11 @@ export class NewEducacionComponent implements OnInit{
   }
 
   uploadImage($event: any){
-    this.educacionService.lista().subscribe(data => {
-      const ids = data.map(res => res.id);
-      const last = ids.length > 0? Math.max(...ids) + 1: 1;
-      const name = "educacion_" + last;
+    this.educacionService.getMax().subscribe(id => {
+      const name = "educacion_" + id;
       this.imageService.uploadImage($event, name);  
     });
-  }
+  };
 
   home(){
     this.router.navigate(['/']) 
